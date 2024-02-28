@@ -7,7 +7,7 @@ for (let index = 1; index <=10; index++) {
 // *********ARRAY SPECIFIC LOOPS************
 
 // for of
-//[{},{},{}] arr of obj
+//[{},{},{}] arr of objects
 const arr=[1,2,3,4,5];
 
 for (const num of arr) {
@@ -21,35 +21,45 @@ console.log(num);
 
 // MAPS
 
-const map=new Map() //holds key value pairs remember the original insertion of the key unique value
+const map = new Map() //holds key-value pairs remember the original insertion of the key unique value
 
 map.set('IN',"INDIA");
 map.set('USA',"United State of America")
+console.log(map); //Map(2) { 'IN' => 'INDIA', 'USA' => 'United State of America' }
 for(const [key , value] of map){
     console.log(key);
 }
 
 // for of loop does not work on the objects
 
-// for in loop
+// for in loop for objects
 const obj ={
     val1:"1",
     val2:2,
     val3:"kka"
 }
 for (const key in obj) {
-    console.log(key);
+    console.log(key);// val1, val2, val3
+    console.log(obj[key]);//1 , 2, kka
+}
+// for in loop for arrays
+const coding = ["js", "ruby", "java", "python", "cpp"]
+
+for (const key in coding) {
+    console.log(key);// 0,1,2,3,4
+    console.log(coding[key]);// js,ruby,java,python,cpp
 }
 
 
 // for each loop
-const coding = ["js", "ruby", "java", "python", "cpp"]
 
-// coding.forEach( function (val){
+const codings = ["js", "ruby", "java", "python", "cpp"]
+
+// codings.forEach( function (val){
 //     console.log(val);
 // } )
 
-// coding.forEach( (item) => {
+// codings.forEach( (item) => {
 //     console.log(item);
 // } )
 
@@ -57,12 +67,13 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 //     console.log(item);
 // }
 
-// coding.forEach(printMe)
+// codings.forEach(printMe)
 
-// coding.forEach( (item, index, arr)=> {
+// codings.forEach( (item, index, arr)=> {
 //     console.log(item, index, arr);
 // } )
 
+// Iterations over array of objects
 const myCoding = [
     {
         languageName: "javascript",
@@ -82,7 +93,6 @@ myCoding.forEach( (item) => {
 
     console.log(item.languageName);
 } )
-
 
 // maps
 const myObject = {
