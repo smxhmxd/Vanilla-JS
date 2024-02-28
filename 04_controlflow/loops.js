@@ -125,21 +125,21 @@ for (const key in programming) {
 
 
 // filter
-// const coding = ["js", "ruby", "java", "python", "cpp"]
+// const codings = ["js", "ruby", "java", "python", "cpp"]
 
 
-// const values = coding.forEach( (item) => {
+// const values = codings.forEach( (item) => {
 //     console.log(item);
 //     return item
 // } )
 
-// console.log(values);
+// console.log(values); // undefined - the forEach loop does not return anything
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// const newNums = myNums.filter( (num) => {
+// const newNums = myNums.filter( (num) => { // once the scope '{' is opened the return keyword should be used
 //     return num > 4
-// } )
+// } ) // 5,6,7,8,9
 
 // const newNums = []
 
@@ -168,11 +168,10 @@ const books = [
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
 
-  let userBooks = books.filter( (bk) => bk.genre === 'History')
+  let userBooks = books.filter( (bk) => bk.genre === 'History')// Books with genre history are returned
 
-  userBooks = books.filter( (bk) => {
-    return bk.publish >= 1995 && bk.genre === "History"
+  userBooks = books.filter( (bk) => { //since a scope was opened '{' return should be used to display result
+    return bk.publish >= 1995 && bk.genre === "History"// Books with genre history and published on or after 1995 are returned
 })
   console.log(userBooks);
 
-//
