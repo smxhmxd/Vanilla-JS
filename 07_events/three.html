@@ -14,9 +14,26 @@
     const sayDate = function(str){
         console.log(str, Date.now());
     }
+    // Added the functionality to start and stop the name change using setInterval
+    let i = 0;
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series " + i;//Value of i increase at every function call
+        i++;
+    }
 
-    const intervalId = setInterval(sayDate, 1000, "hi")
+    let changeMe = "";
 
-    clearInterval(intervalId)
+    document.querySelector('#start').addEventListener('click', function(){
+        changeMe = setInterval(changeText, 2000)
+        console.log("STARTED")
+    })
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+    // const intervalId = setInterval(sayDate, 1000, "hi")
+
+    // clearInterval(intervalId)
 </script>
 </html>
